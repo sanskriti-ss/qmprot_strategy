@@ -8,12 +8,12 @@ features organic molecules with up to 15 non-hydrogen atoms (C, N, O, S), offeri
 
 ### Structure of the Repository
 
-This repository contains two main folders:
+This repository contains two folders:
 
 - Quantum Strategy for the Simulation of Large Proteins: This folder contains the material supporting the research on quantum resource estimation for simulating fragmented biomolecules such as amino acids and peptides. It contributes to assessing the scalability and fault-tolerant feasibility of simulating large biomolecules through fragmentation and reassembly, as detailed in the associated paper: "Quantum Strategy for the Simulation of Large Proteins: From Fragmentation in Small Proteins to Scalability in Complex Systems"
 Parfait Atchade-Adelomou & Laia Coronas Sala (2025).
 
-- QMProt Hamiltonians and Energies:This folder contains the code used to simulate the molecules in the QMProt dataset, including the computation of Hamiltonians, energy estimations, and generation of the plots presented in the main paper.
+- QMProt: This folder contains the code used to simulate the molecules in the QMProt dataset, including the computation of Hamiltonians, energy estimations, and generation of the plots presented in the paper.
 
 ### Citation
 ```python
