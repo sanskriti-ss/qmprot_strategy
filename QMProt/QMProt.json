@@ -405,7 +405,7 @@
       ],
       "spin": 0,
       "basis": "sto-3g",
-      "n_qubits": 114,
+      "n_qubits": 148,
       "n_coefficients": 41609123,
       "hamiltonian": "hamiltonian_arg.txt",
       "energy": -595.17254
@@ -556,7 +556,7 @@
       ],
       "spin": 0,
       "basis": "sto-3g",
-      "n_qubits": 102,
+      "n_qubits": 148,
       "n_coefficients": 46746137,
       "hamiltonian": "hamiltonian_tyr.txt",
       "energy": -618.27595
@@ -955,7 +955,7 @@
       ],       
         "spin": 1,
         "basis": "6-31g",
-        "n_qubits": 14,
+        "n_qubits": 58,
         "n_coefficients": 520540,
         "hamiltonian": "hamiltonian_R_ile.txt",
         "energy": -155.80306
