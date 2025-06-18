@@ -1,0 +1,13 @@
+Target,Scope,Model,Transform,Lambda,R² total,R² CV,MAE,RMSE,Std Dev,Coef Var (%)
+Qubits,Global,OLS,log,,0.999,0.998,0.016,0.025,1.011,18.27
+Qubits,Global,RANSAC,log,,0.999,0.998,0.016,0.025,1.011,18.27
+Qubits,Global,Theil-Sen,log,,0.999,0.998,0.014,0.023,1.011,18.27
+Qubits,Global,Huber ε=1.35,log,,0.999,0.998,0.014,0.022,1.011,18.27
+Qubits,Global,Huber+Poly,log,,0.999,0.998,0.015,0.024,1.011,18.27
+Qubits,Small (≤300),HuberRegressor,log,,0.996,0.991,0.036,0.049,0.489,9.88
+Qubits,Medium+Large (>300),TheilSenRegressor,log,,1.0,1.0,0.0,0.001,0.49,7.14
+Coefficients,Global,Huber+Poly+BC,boxcox,-0.057,0.986,0.94,0.132,0.152,2.482,19.47
+Coefficients,Q1,Huber+Poly+BC,boxcox,0.704,0.813,0.583,21759.908,25696.697,43162.862,41.26
+Coefficients,Q2,Huber+Poly+BC,boxcox,-0.867,-8997407.96,,0.0,0.0,0.0,0.0
+Coefficients,Q3,Huber+Poly+BC,boxcox,-0.062,0.911,0.625,0.223,0.314,0.822,6.54
+Coefficients,Q4,Huber+Poly+BC,boxcox,-0.036,0.999,0.992,0.082,0.083,2.282,9.99

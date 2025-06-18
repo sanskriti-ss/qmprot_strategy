@@ -3,7 +3,7 @@
     {
       "name": "alanine",
       "n_electrons": 48,
-      "n_qubits": 74,
+      "n_qubits": 22,
       "n_coefficients": 2725840
     },
     {
@@ -15,457 +15,457 @@
     {
       "name": "histidine",
       "n_electrons": 82,
-      "n_qubits": 128,
+      "n_qubits": 25,
       "n_coefficients": 23831261
     },
     {
       "name": "R_his + Base Structures",
       "n_electrons": 0,
-      "n_qubits": 70,
+      "n_qubits": 21,
       "n_coefficients": 2034664
     },
     {
       "name": "leucine",
       "n_electrons": 72,
-      "n_qubits": 116,
+      "n_qubits": 24,
       "n_coefficients": 16200242
     },
     {
       "name": "R_leu + Base Structures",
       "n_electrons": 0,
-      "n_qubits": 58,
+      "n_qubits": 20,
       "n_coefficients": 576486
     },
     {
       "name": "isoleucine",
       "n_electrons": 72,
-      "n_qubits": 116,
+      "n_qubits": 24,
       "n_coefficients": 16379995
     },
     {
       "name": "R_ile + Base Structures",
       "n_electrons": 0,
-      "n_qubits": 58,
+      "n_qubits": 20,
       "n_coefficients": 576486
     },
     {
       "name": "lysine",
       "n_electrons": 80,
-      "n_qubits": 128,
+      "n_qubits": 25,
       "n_coefficients": 23906497
     },
     {
       "name": "R_lys + Base Structures",
       "n_electrons": 0,
-      "n_qubits": 70,
+      "n_qubits": 22,
       "n_coefficients": 2253412
     },
     {
       "name": "methionine",
       "n_electrons": 80,
-      "n_qubits": 120,
+      "n_qubits": 25,
       "n_coefficients": 17802421
     },
     {
       "name": "R_met + Base Structures",
       "n_electrons": 0,
-      "n_qubits": 60,
+      "n_qubits": 20,
       "n_coefficients": 562573
     },
     {
       "name": "phenylalanine",
       "n_electrons": 88,
-      "n_qubits": 142,
+      "n_qubits": 26,
       "n_coefficients": 36125918
     },
     {
       "name": "R_phe + Base Structures",
       "n_electrons": 0,
-      "n_qubits": 84,
+      "n_qubits": 22,
       "n_coefficients": 3778169
     },
     {
       "name": "threonine",
       "n_electrons": 64,
-      "n_qubits": 94,
+      "n_qubits": 23,
       "n_coefficients": 8355908
     },
     {
       "name": "R_thr + Base Structures",
       "n_electrons": 0,
-      "n_qubits": 38,
+      "n_qubits": 17,
       "n_coefficients": 105552
     },
     {
       "name": "tryptophan",
       "n_electrons": 108,
-      "n_qubits": 159,
+      "n_qubits": 27,
       "n_coefficients": 92412988
     },
     {
       "name": "R_trp + Base Structures",
       "n_electrons": 0,
-      "n_qubits": 116,
+      "n_qubits": 24,
       "n_coefficients": 14920549
     },
     {
       "name": "valine",
       "n_electrons": 64,
-      "n_qubits": 102,
+      "n_qubits": 24,
       "n_coefficients": 9819598
     },
     {
       "name": "R_val + Base Structures",
       "n_electrons": 0,
-      "n_qubits": 44,
+      "n_qubits": 19,
       "n_coefficients": 397765
     },
     {
       "name": "arginine",
       "n_electrons": 94,
-      "n_qubits": 146,
-      "n_coefficients": 43576110
+      "n_qubits": 26,
+      "n_coefficients": 41609123
     },
     {
       "name": "R_arg + Base Structures",
       "n_electrons": 0,
-      "n_qubits": 88,
+      "n_qubits": 23,
       "n_coefficients": 5467451
     },
     {
       "name": "cysteine",
       "n_electrons": 66,
-      "n_qubits": 92,
+      "n_qubits": 23,
       "n_coefficients": 6193299
     },
     {
       "name": "R_cys + Base Structures",
       "n_electrons": 0,
-      "n_qubits": 34,
+      "n_qubits": 18,
       "n_coefficients": 156094
     },
     {
       "name": "glutamine",
       "n_electrons": 78,
-      "n_qubits": 120,
+      "n_qubits": 25,
       "n_coefficients": 18268397
     },
     {
       "name": "R_gln + Base Structures",
       "n_electrons": 0,
-      "n_qubits": 62,
+      "n_qubits": 20,
       "n_coefficients": 872576
     },
     {
       "name": "asparagine",
       "n_electrons": 70,
-      "n_qubits": 106,
+      "n_qubits": 24,
       "n_coefficients": 11309980
     },
     {
       "name": "R_asn + Base Structures",
       "n_electrons": 0,
-      "n_qubits": 48,
+      "n_qubits": 19,
       "n_coefficients": 344527
     },
     {
       "name": "tyrosine",
       "n_electrons": 96,
-      "n_qubits": 149,
-      "n_coefficients": 48516460
+      "n_qubits": 26,
+      "n_coefficients": 46746137
     },
     {
       "name": "R_tyr + Base Structures",
       "n_electrons": 0,
-      "n_qubits": 94,
+      "n_qubits": 23,
       "n_coefficients": 4324200
     },
     {
       "name": "serine",
       "n_electrons": 56,
-      "n_qubits": 84,
+      "n_qubits": 23,
       "n_coefficients": 4532699
     },
     {
       "name": "R_ser + Base Structures",
       "n_electrons": 0,
-      "n_qubits": 26,
+      "n_qubits": 17,
       "n_coefficients": 97014
     },
     {
       "name": "glycine",
       "n_electrons": 40,
-      "n_qubits": 60,
+      "n_qubits": 21,
       "n_coefficients": 1164627
     },
     {
       "name": "R_gly + Base Structures",
       "n_electrons": 0,
-      "n_qubits": 2,
+      "n_qubits": 16,
       "n_coefficients": 55950
     },
     {
       "name": "aspartic_acid",
       "n_electrons": 70,
-      "n_qubits": 104,
+      "n_qubits": 24,
       "n_coefficients": 10543213
     },
     {
       "name": "R_asp + Base Structures",
       "n_electrons": 0,
-      "n_qubits": 46,
+      "n_qubits": 19,
       "n_coefficients": 431212
     },
     {
       "name": "glutamic_acid",
       "n_electrons": 78,
-      "n_qubits": 118,
+      "n_qubits": 25,
       "n_coefficients": 17208382
     },
     {
       "name": "R_glu + Base Structures",
       "n_electrons": 0,
-      "n_qubits": 60,
+      "n_qubits": 21,
       "n_coefficients": 1217409
     },
     {
       "name": "proline",
       "n_electrons": 62,
-      "n_qubits": 98,
+      "n_qubits": 23,
       "n_coefficients": 8368092
     },
     {
       "name": "R_pro + Base Structures",
       "n_electrons": 0,
-      "n_qubits": 42,
+      "n_qubits": 17,
       "n_coefficients": 129054
     },
     {
       "name": "Glucagon",
       "n_electrons": 1852,
-      "n_qubits": 2840,
+      "n_qubits": 162,
       "n_coefficients": 4330000000000000003254332031584566645250714501120
     },
     {
-      "name": "Compostion from amino acids - Glucagon",
+      "name": "Compostion from amino acids",
       "n_electrons": 0,
-      "n_qubits": 0,
+      "n_qubits": 29,
       "n_coefficients": 501556414
     },
     {
       "name": "Oxytocin",
       "n_electrons": 536,
-      "n_qubits": 823,
+      "n_qubits": 60,
       "n_coefficients": 885000000000000000
     },
     {
-      "name": "Compostion from amino acids - Oxytocin",
+      "name": "Compostion from amino acids",
       "n_electrons": 0,
-      "n_qubits": 0,
+      "n_qubits": 27,
       "n_coefficients": 130824068
     },
     {
       "name": "Vasopressin",
       "n_electrons": 1134,
-      "n_qubits": 1739,
+      "n_qubits": 106,
       "n_coefficients": 78099999999999985762243006431232
     },
     {
-      "name": "Compostion from amino acids - Vasopressin",
+      "name": "Compostion from amino acids",
       "n_electrons": 0,
-      "n_qubits": 0,
+      "n_qubits": 28,
       "n_coefficients": 175978872
     },
     {
       "name": "Angiotensin II",
       "n_electrons": 558,
-      "n_qubits": 857,
+      "n_qubits": 62,
       "n_coefficients": 2880000000000000000
     },
     {
-      "name": "Compostion from amino acids - Angiotensin II",
+      "name": "Compostion from amino acids",
       "n_electrons": 0,
-      "n_qubits": 0,
+      "n_qubits": 28,
       "n_coefficients": 193423337
     },
     {
       "name": "Kyotorphin (Tyr-Arg)",
       "n_electrons": 180,
-      "n_qubits": 277,
+      "n_qubits": 33,
       "n_coefficients": 4413634877
     },
     {
-      "name": "Compostion from amino acids - Kyotorphin",
+      "name": "Compostion from amino acids",
       "n_electrons": 0,
-      "n_qubits": 0,
+      "n_qubits": 27,
       "n_coefficients": 88355260
     },
     {
       "name": "Metionina encefalina (Tyr-Gly-Gly-Phe-Met)",
       "n_electrons": 304,
-      "n_qubits": 467,
+      "n_qubits": 42,
       "n_coefficients": 3439670000000
     },
     {
-      "name": "Compostion from amino acids - Metionina encefalina",
+      "name": "Compostion from amino acids",
       "n_electrons": 0,
-      "n_qubits": 0,
+      "n_qubits": 27,
       "n_coefficients": 103003730
     },
     {
       "name": "Leucina encefalina (Tyr-Gly-Gly-Phe-Leu)",
       "n_electrons": 296,
-      "n_qubits": 455,
+      "n_qubits": 42,
       "n_coefficients": 2238480000000
     },
     {
-      "name": "Compostion from amino acids - Leucina encefalina",
+      "name": "Compostion from amino acids",
       "n_electrons": 0,
-      "n_qubits": 0,
+      "n_qubits": 27,
       "n_coefficients": 101401551
     },
     {
       "name": "Tuftsin (Thr-Lys-Pro-Arg)",
       "n_electrons": 270,
-      "n_qubits": 415,
+      "n_qubits": 40,
       "n_coefficients": 554148000000
     },
     {
-      "name": "Compostion from amino acids - Tuftsin",
+      "name": "Compostion from amino acids",
       "n_electrons": 0,
-      "n_qubits": 0,
+      "n_qubits": 27,
       "n_coefficients": 82239620
     },
     {
       "name": "Opiorfina (Gln-Arg-Phe-Ser-Arg)",
       "n_electrons": 370,
-      "n_qubits": 569,
+      "n_qubits": 47,
       "n_coefficients": 119030000000000
     },
     {
-      "name": "Compostion from amino acids - Opiorfina",
+      "name": "Compostion from amino acids",
       "n_electrons": 0,
-      "n_qubits": 0,
+      "n_qubits": 28,
       "n_coefficients": 142145260
     },
     {
       "name": "Dermorfina (Tyr-D-Ala-Phe-Gly-Tyr-Pro-Ser)",
       "n_electrons": 426,
-      "n_qubits": 654,
+      "n_qubits": 52,
       "n_coefficients": 2407670000000000
     },
     {
-      "name": "Compostion from amino acids - Dermorfina",
+      "name": "Compostion from amino acids",
       "n_electrons": 0,
-      "n_qubits": 0,
+      "n_qubits": 28,
       "n_coefficients": 143683610
     },
     {
       "name": "Angiotensina IV (Val-Tyr-Ile-His-Pro-Phe)",
       "n_electrons": 414,
-      "n_qubits": 636,
+      "n_qubits": 51,
       "n_coefficients": 1264020000000000
     },
     {
-      "name": "Compostion from amino acids - Angiotensina IV",
+      "name": "Compostion from amino acids",
       "n_electrons": 0,
-      "n_qubits": 0,
+      "n_qubits": 28,
       "n_coefficients": 141271001
     },
     {
       "name": "Neurotensina (Glu-Leu-Tyr-Glu-Asn-Lys-Pro-Arg-Arg-Pro-Tyr-Ile-Leu)",
       "n_electrons": 896,
-      "n_qubits": 1374,
+      "n_qubits": 88,
       "n_coefficients": 220000000000000007046430720
     },
     {
-      "name": "Compostion from amino acids - Neurotensina",
+      "name": "Compostion from amino acids",
       "n_electrons": 0,
-      "n_qubits": 0,
+      "n_qubits": 29,
       "n_coefficients": 311860424
     },
     {
       "name": "Bradicinina (Arg-Pro-Pro-Gly-Phe-Ser-Pro-Phe-Arg)",
       "n_electrons": 566,
-      "n_qubits": 869,
+      "n_qubits": 62,
       "n_coefficients": 4430000000000000000
     },
     {
-      "name": "Compostion from amino acids - Bradicinina",
+      "name": "Compostion from amino acids",
       "n_electrons": 0,
-      "n_qubits": 0,
+      "n_qubits": 28,
       "n_coefficients": 186271684
     },
     {
       "name": "Angiotensina I (Asp-Arg-Val-Tyr-Ile-His-Pro-Phe-His-Leu)",
       "n_electrons": 692,
-      "n_qubits": 1062,
+      "n_qubits": 72,
       "n_coefficients": 3840000000000000000000
     },
     {
-      "name": "Compostion from amino acids - Angiotensina I",
+      "name": "Compostion from amino acids",
       "n_electrons": 0,
-      "n_qubits": 0,
+      "n_qubits": 28,
       "n_coefficients": 233454840
     },
     {
       "name": "Gastrin-14 (H-Trp-Leu-Glu-Glu-Glu-Glu-Glu-Ala-Tyr-Gly-Trp-Met-Asp-Phe-NH2)",
       "n_electrons": 789,
-      "n_qubits": 1211,
+      "n_qubits": 80,
       "n_coefficients": 702999999999999976931328
     },
     {
-      "name": "Compostion from amino acids - Gastrin-14",
+      "name": "Compostion from amino acids",
       "n_electrons": 0,
-      "n_qubits": 0,
+      "n_qubits": 28,
       "n_coefficients": 217350308
     },
     {
       "name": "GLU_CYS_GLY",
       "n_electrons": 162,
-      "n_qubits": 250,
+      "n_qubits": 33,
       "n_coefficients": 5471138416
     },
     {
-      "name": "Compostion from amino acids - GLU_CYS_GLY",
+      "name": "Compostion from amino acids",
       "n_electrons": 0,
-      "n_qubits": 0,
+      "n_qubits": 25,
       "n_coefficients": 24566308
     },
     {
       "name": "ALA_HIS",
       "n_electrons": 120,
-      "n_qubits": 186,
+      "n_qubits": 29,
       "n_coefficients": 301148122
     },
     {
-      "name": "Compostion from amino acids - ALA_HIS",
+      "name": "Compostion from amino acids",
       "n_electrons": 0,
-      "n_qubits": 0,
+      "n_qubits": 25,
       "n_coefficients": 26557101
     },
     {
       "name": "PRO_GLY_PRO",
       "n_electrons": 182,
-      "n_qubits": 281,
+      "n_qubits": 31,
       "n_coefficients": 1869266423
     },
     {
-      "name": "Compostion from amino acids - PRO_GLY_PRO",
+      "name": "Compostion from amino acids",
       "n_electrons": 0,
-      "n_qubits": 0,
+      "n_qubits": 25,
       "n_coefficients": 17900811
     },
     {
       "name": "GLY_HIS_LYS",
       "n_electrons": 144,
-      "n_qubits": 222,
+      "n_qubits": 34,
       "n_coefficients": 14382803589
     },
     {
-      "name": "Compostion from amino acids - GLY HIS LYS",
+      "name": "Compostion from amino acids",
       "n_electrons": 0,
-      "n_qubits": 0,
+      "n_qubits": 26,
       "n_coefficients": 48902385
     }
   ],
