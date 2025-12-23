@@ -112,22 +112,21 @@ class QubitHamiltonian:
 
 
 class HamiltonianLoader:
-    """Load and parse Hamiltonians from files"""
-    
+    """Load and parse Hamiltonians from files or QMProt datasets"""
+
     def __init__(self, 
                  hamiltonians_dir: Union[str, Path],
                  molecules_json: Optional[Union[str, Path]] = None):
         """
         Initialize the Hamiltonian loader.
-        
         Args:
-            hamiltonians_dir: Directory containing Hamiltonian .txt files
+            hamiltonians_dir: Directory containing Hamiltonian .txt files or datasets
             molecules_json: Path to QMProt.json metadata file
         """
         self.hamiltonians_dir = Path(hamiltonians_dir)
         self.molecules_json = Path(molecules_json) if molecules_json else None
         self.molecules: Dict[str, Molecule] = {}
-        
+
         if self.molecules_json and self.molecules_json.exists():
             self._load_molecules_metadata()
     
@@ -180,54 +179,70 @@ class HamiltonianLoader:
                          molecule_abbrev: Optional[str] = None,
                          hamiltonian_file: Optional[Union[str, Path]] = None) -> QubitHamiltonian:
         """
-        Load a Hamiltonian from file.
-        
-        Args:
-            molecule_abbrev: Molecule abbreviation (e.g., 'trp', 'his')
-            hamiltonian_file: Direct path to Hamiltonian file
-            
-        Returns:
-            QubitHamiltonian object
+        Load a Hamiltonian from file or QMProt dataset if in datasets/ mode.
         """
-        # Determine file path
-        if hamiltonian_file:
-            file_path = Path(hamiltonian_file)
-        elif molecule_abbrev:
-            if molecule_abbrev in self.molecules:
-                file_path = self.hamiltonians_dir / self.molecules[molecule_abbrev].hamiltonian_file
+        import pennylane as qml
+        import os
+        # Detect if using datasets/ (QMProt mode)
+        if self.hamiltonians_dir.name == "datasets":
+            # Expect molecule_abbrev to match a subfolder (e.g., "ala", "gly")
+            if molecule_abbrev is None:
+                raise ValueError("Must provide molecule_abbrev for QMProt dataset mode.")
+            dataset_path = self.hamiltonians_dir / molecule_abbrev / f"{molecule_abbrev}.h5"
+            if not dataset_path.exists():
+                raise FileNotFoundError(f"QMProt dataset file not found: {dataset_path}")
+            ds = qml.data.load("other", name=molecule_abbrev)
+            # Find hamiltonian chunks as in hamiltonian_download.ipynb
+            hamiltonian_chunks = []
+            if isinstance(ds, list):
+                dataset = ds[0] if len(ds) > 0 else None
+                if dataset is not None:
+                    if hasattr(dataset, 'list_attributes'):
+                        for key in dataset.list_attributes():
+                            if "hamiltonian" in key:
+                                hamiltonian_chunks.append(getattr(dataset, key))
+                    elif hasattr(dataset, '__dict__'):
+                        for key in dir(dataset):
+                            if "hamiltonian" in key and not key.startswith('_'):
+                                hamiltonian_chunks.append(getattr(dataset, key))
             else:
-                file_path = self.hamiltonians_dir / f"hamiltonian_{molecule_abbrev}.txt"
-        else:
-            raise ValueError("Must provide either molecule_abbrev or hamiltonian_file")
-        
-        if not file_path.exists():
-            raise FileNotFoundError(f"Hamiltonian file not found: {file_path}")
-        
-        # Parse the Hamiltonian file
-        coefficients, pauli_strings = self._parse_hamiltonian_file(file_path)
-        
-        # Get or create molecule info
-        if molecule_abbrev and molecule_abbrev in self.molecules:
-            molecule = self.molecules[molecule_abbrev]
-        else:
-            # Create minimal molecule info
+                for key in ds.list_attributes():
+                    if "hamiltonian" in key:
+                        hamiltonian_chunks.append(getattr(ds, key))
+            if not hamiltonian_chunks:
+                raise ValueError("No hamiltonian chunks found in QMProt dataset.")
+            full_hamiltonian = "".join(hamiltonian_chunks)
+            lines = full_hamiltonian.split("\n")
+            valid_lines = [line.strip() for line in lines if line.strip() and "Coefficient" not in line and "Operators" not in line]
+            coefficients = []
+            pauli_strings = []
+            for line in valid_lines:
+                parts = line.split()
+                try:
+                    coeff = float(parts[0])
+                    pauli_str = parts[1].strip()
+                    coefficients.append(coeff)
+                    pauli_strings.append(pauli_str)
+                except Exception:
+                    continue
             n_qubits = len(pauli_strings[0]) if pauli_strings else 0
             molecule = Molecule(
-                abbreviation=molecule_abbrev or file_path.stem,
-                name=molecule_abbrev or file_path.stem,
+                abbreviation=molecule_abbrev,
+                name=molecule_abbrev,
                 n_qubits=n_qubits,
                 n_coefficients=len(coefficients),
                 reference_energy=0.0,
-                hamiltonian_file=file_path.name,
+                hamiltonian_file=str(dataset_path),
             )
-        
-        return QubitHamiltonian(
-            molecule=molecule,
-            coefficients=np.array(coefficients),
-            pauli_strings=pauli_strings,
-            n_qubits=len(pauli_strings[0]) if pauli_strings else 0,
-            n_terms=len(coefficients),
-        )
+            return QubitHamiltonian(
+                molecule=molecule,
+                coefficients=np.array(coefficients),
+                pauli_strings=pauli_strings,
+                n_qubits=n_qubits,
+                n_terms=len(coefficients),
+            )
+        # Default: text file mode
+        # ...existing code...
     
     def _parse_hamiltonian_file(self, file_path: Path) -> Tuple[List[float], List[str]]:
         """

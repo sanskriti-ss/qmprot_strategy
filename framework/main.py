@@ -18,6 +18,7 @@ from config import (
     DEFAULT_OPTIMIZER, MAX_ITERATIONS, CONVERGENCE_THRESHOLD,
     N_SHOTS, RANDOM_SEED, LOG_LEVEL, LOG_FILE
 )
+import ast
 from core import HamiltonianLoader, ResultsManager
 from core.hamiltonian_loader import QubitHamiltonian
 from algorithms import ALGORITHMS, get_algorithm, list_algorithms
@@ -33,6 +34,17 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
+
+
+def get_if_qmprot_hamiltonian():
+    vars_path = Path(__file__).parent / ".vars"
+    if vars_path.exists():
+        with open(vars_path) as f:
+            for line in f:
+                if line.strip().startswith("if_qmprot_hamiltonian"):
+                    key, val = line.split("=", 1)
+                    return ast.literal_eval(val.strip())
+    return False
 
 
 class VQEFramework:
@@ -54,7 +66,13 @@ class VQEFramework:
             results_dir: Directory for saving results
             plots_dir: Directory for saving plots
         """
-        self.hamiltonians_dir = hamiltonians_dir or HAMILTONIANS_DIR
+        # Check .vars for QMProt hamiltonian mode
+        if_qmprot = get_if_qmprot_hamiltonian()
+        if if_qmprot:
+            # Use datasets/ as the hamiltonian source
+            self.hamiltonians_dir = Path(__file__).parent / "datasets"
+        else:
+            self.hamiltonians_dir = hamiltonians_dir or HAMILTONIANS_DIR
         self.molecules_json = molecules_json or MOLECULES_JSON
         self.results_dir = results_dir or RESULTS_DIR
         self.plots_dir = plots_dir or PLOTS_DIR
