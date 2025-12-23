@@ -1,0 +1,2 @@
+molecule_abbrev,molecule_name,algorithm,calculated_energy,reference_energy,error,relative_error,n_iterations,n_qubits,n_parameters,runtime_seconds,converged
+gly,gly,vanilla_vqe,-510.0557513670283,0.0,-510.0557513670283,0.0,1001,11,66,31328.666939258575,False

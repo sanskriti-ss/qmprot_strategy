@@ -69,7 +69,7 @@ class BaseVQE(ABC):
     def __init__(self,
                  hamiltonian: QubitHamiltonian,
                  optimizer: str = "COBYLA",
-                 max_iterations: int = 1000,
+                 max_iterations: int = 100,
                  convergence_threshold: float = 1e-6,
                  n_shots: int = 0,
                  random_seed: Optional[int] = None,
@@ -171,14 +171,15 @@ class BaseVQE(ABC):
             Tuple of (optimal_parameters, optimal_energy)
         """
         from scipy.optimize import minimize
-        
+        from tqdm import tqdm
+
         if initial_parameters is None:
             initial_parameters = self.get_initial_parameters()
-        
+
         # Reset tracking
         self.convergence_history = []
         self.iteration_count = 0
-        
+
         # Map optimizer names
         scipy_optimizers = {
             "COBYLA": "COBYLA",
@@ -187,25 +188,33 @@ class BaseVQE(ABC):
             "NelderMead": "Nelder-Mead",
             "Powell": "Powell",
         }
-        
+
         method = scipy_optimizers.get(self.optimizer_name, self.optimizer_name)
-        
-        # Run optimization
+
+        # Wrap callback and cost function for tqdm progress bar
+        pbar = tqdm(total=self.max_iterations, desc="VQE Optimization", unit="iter")
+        self._last_iter = 0
+        def tqdm_callback(params):
+            self.callback(params)
+            pbar.update(self.iteration_count - self._last_iter)
+            self._last_iter = self.iteration_count
+
         result = minimize(
             self.cost_function,
             initial_parameters,
             method=method,
-            callback=self.callback,
+            callback=tqdm_callback,
             options={
                 "maxiter": self.max_iterations,
                 "disp": False,
             },
             tol=self.convergence_threshold,
         )
-        
+        pbar.close()
+
         self.optimal_parameters = result.x
         self.optimal_energy = result.fun
-        
+
         return result.x, result.fun
     
     def run(self) -> VQEResult:
