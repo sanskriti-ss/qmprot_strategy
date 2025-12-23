@@ -1,0 +1,2 @@
+molecule_abbrev,molecule_name,algorithm,calculated_energy,reference_energy,error,relative_error,n_iterations,n_qubits,n_parameters,runtime_seconds,converged
+h2,hydrogen,vanilla_vqe,-1.1961177035066743,-1.137306035753,-0.0588116677536743,0.051711382780744344,51,4,24,1.2058842182159424,False
