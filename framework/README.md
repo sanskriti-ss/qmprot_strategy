@@ -53,6 +53,7 @@ cp .env.example .env
 
 Place your Hamiltonian files (e.g., `hamiltonian_trp.txt`) in `data/hamiltonians/`.
 In order to download them from qmprot, run the first two cells of hamiltonian_download.ipynb. Change the file names as necessary (note to devs: put the vars for the names at the top of the file to make it more user friendly)
+OR instead of the .ipynb, just do run download_qmprot_hamiltonians.py
 
 ### 4. Run the Framework
 
