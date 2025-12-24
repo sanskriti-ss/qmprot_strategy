@@ -241,8 +241,60 @@ class HamiltonianLoader:
                 n_qubits=n_qubits,
                 n_terms=len(coefficients),
             )
+        
         # Default: text file mode
-        # ...existing code...
+        if molecule_abbrev:
+            # Look up molecule metadata
+            if molecule_abbrev not in self.molecules:
+                raise ValueError(f"Molecule '{molecule_abbrev}' not found in metadata. "
+                                f"Available: {list(self.molecules.keys())}")
+            
+            molecule = self.molecules[molecule_abbrev]
+            file_path = self.hamiltonians_dir / molecule.hamiltonian_file
+            
+        elif hamiltonian_file:
+            # Direct file path provided
+            file_path = Path(hamiltonian_file)
+            if not file_path.is_absolute():
+                file_path = self.hamiltonians_dir / file_path
+            
+            # Create minimal molecule info
+            molecule = Molecule(
+                abbreviation=file_path.stem.replace("hamiltonian_", ""),
+                name="Unknown",
+                n_qubits=0,  # Will be determined from file
+                n_coefficients=0,  # Will be determined from file
+                reference_energy=0.0,
+                hamiltonian_file=str(file_path),
+            )
+        else:
+            raise ValueError("Must provide either molecule_abbrev or hamiltonian_file")
+        
+        if not file_path.exists():
+            raise FileNotFoundError(f"Hamiltonian file not found: {file_path}")
+        
+        logger.info(f"Loading Hamiltonian from {file_path}")
+        
+        # Parse the file
+        coefficients, pauli_strings = self._parse_hamiltonian_file(file_path)
+        
+        if not pauli_strings:
+            raise ValueError(f"No valid Hamiltonian terms found in {file_path}")
+        
+        # Determine number of qubits from Pauli strings
+        n_qubits = len(pauli_strings[0]) if pauli_strings else 0
+        
+        # Update molecule info with actual values
+        molecule.n_qubits = n_qubits
+        molecule.n_coefficients = len(coefficients)
+        
+        return QubitHamiltonian(
+            molecule=molecule,
+            coefficients=np.array(coefficients),
+            pauli_strings=pauli_strings,
+            n_qubits=n_qubits,
+            n_terms=len(coefficients),
+        )
     
     def _parse_hamiltonian_file(self, file_path: Path) -> Tuple[List[float], List[str]]:
         """

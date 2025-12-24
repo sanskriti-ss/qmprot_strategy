@@ -69,7 +69,7 @@ class HardwareEfficientVQE(BaseVQE):
         self.n_parameters = n_qubits * rotations_per_qubit * (n_layers + 1)
         
         # Create device
-        self.device = qml.device("default.qubit", wires=n_qubits)
+        self.device = qml.device("lightning.qubit", wires=n_qubits) # switch to default if needed
         
         # Get Hamiltonian
         H = self.hamiltonian.to_pennylane()

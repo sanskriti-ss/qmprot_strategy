@@ -1,14 +1,13 @@
-
 import pennylane as qml
 from tqdm import tqdm
 import os
 
-def download_alanine_hamiltonian(max_terms=1000, save_path="data/hamiltonians/hamiltonian_ala_pennylane.txt"):
+def download_hamiltonian(max_terms=1000, save_path="data/hamiltonians/hamiltonian_gln.txt"):
     coefficients = []
     operators = []
     hamiltonian_chunks = []
 
-    ds = qml.data.load('other', name='ala')
+    ds = qml.data.load('other', name='gln')
     print(f"Dataset type: {type(ds)}")
     print(f"Dataset content: {ds}")
 
@@ -60,4 +59,4 @@ def download_alanine_hamiltonian(max_terms=1000, save_path="data/hamiltonians/ha
         print("No hamiltonian chunks found. Please check the dataset structure.")
 
 if __name__ == "__main__":
-    download_alanine_hamiltonian()
+    download_hamiltonian()

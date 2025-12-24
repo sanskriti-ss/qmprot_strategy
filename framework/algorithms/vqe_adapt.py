@@ -60,7 +60,7 @@ class AdaptVQE(BaseVQE):
         n_qubits = self.n_qubits
         
         # Create device
-        self.device = qml.device("default.qubit", wires=n_qubits)
+        self.device = qml.device("lightning.qubit", wires=n_qubits) # switch to default if needed
         
         # Build operator pool (single and double excitations)
         self.operator_pool = []

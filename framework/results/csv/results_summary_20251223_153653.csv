@@ -1,0 +1,2 @@
+molecule_abbrev,molecule_name,algorithm,calculated_energy,reference_energy,error,relative_error,n_iterations,n_qubits,n_parameters,runtime_seconds,converged
+gln,glutamine,qaoa_inspired_vqe,208.18962503120707,-521.7506241814889,729.940249212696,1.3990213243305851,1001,16,20,4063.078622341156,False

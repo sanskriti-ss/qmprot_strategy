@@ -60,7 +60,7 @@ class QAOAInspiredVQE(BaseVQE):
         self.n_parameters = n_layers * 2 + n_qubits  # gamma, beta per layer + initial angles
         
         # Create device
-        self.device = qml.device("default.qubit", wires=n_qubits)
+        self.device = qml.device("lightning.qubit", wires=n_qubits) # switch to default if needed
         
         # Get Hamiltonian
         H = self.hamiltonian.to_pennylane()

@@ -17,11 +17,11 @@ seaborn>=0.12.0
 python-dotenv>=1.0.0
 tqdm>=4.65.0
 
-# Optional: Qiskit (uncomment if needed)
-# qiskit>=1.0.0
-# qiskit-aer>=0.13.0
+# Optional: Qiskit (comment if needed)
+qiskit>=1.0.0
+qiskit-aer>=0.13.0
 
-# Optional: Chemistry backends (uncomment if generating Hamiltonians)
-# pyscf>=2.4.0
-# openfermion>=1.6.0
-# openfermionpyscf>=0.5
+# Optional: Chemistry backends (comment if generating Hamiltonians)
+pyscf>=2.4.0
+openfermion>=1.6.0
+openfermionpyscf>=0.5

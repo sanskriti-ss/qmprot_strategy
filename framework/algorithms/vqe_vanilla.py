@@ -56,7 +56,7 @@ class VanillaVQE(BaseVQE):
         self.n_parameters = n_qubits * 3 * n_layers
         
         # Create device
-        self.device = qml.device("default.qubit", wires=n_qubits)
+        self.device = qml.device("lightning.qubit", wires=n_qubits) # switch to default if needed
         
         # Get Hamiltonian in PennyLane format
         H = self.hamiltonian.to_pennylane()

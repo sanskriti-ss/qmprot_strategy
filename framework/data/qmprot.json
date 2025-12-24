@@ -1,6 +1,21 @@
 {
     "test_molecules": [
       {
+        "abbreviation": "gln",
+        "name": "glutamine",
+        "mf": "C5H10N2O3",
+        "n_atoms": 20,
+        "charge": 0,
+        "n_electrons": 10,
+        "n_orbitals": 8,
+        "n_qubits": 16,
+        "n_coefficients": 5793,
+        "hamiltonian": "hamiltonian_gln.txt",
+        "energy": -521.7506241814889,
+        "basis": "sto-3g",
+        "description": "Glutamine (active space: 10e in 8 orbitals)"
+      },
+      {
         "abbreviation": "h2",
         "name": "hydrogen",
         "mf": "H2",
